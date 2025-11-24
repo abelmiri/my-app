@@ -6,6 +6,11 @@ export interface User {
   role: "admin" | "user" | "guest";
   isActive: boolean;
   joinDate: Date;
+  bio?: string;
+  location?: string;
+  phone?: string;
+  department?: string;
+  lastLogin?: Date;
 }
 
 export interface UserCardProps {

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -29,18 +31,29 @@ export default function UserCard({
   showActions = true,
   className,
 }: UserCardProps) {
+  const router = useRouter();
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
-  const handleEdit = (): void => {
+  const handleEdit = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    e.stopPropagation();
     if (onEdit) {
       onEdit(user.id);
     }
   };
 
-  const handleDelete = (): void => {
+  const handleDelete = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    e.stopPropagation();
     if (onDelete) {
       onDelete(user.id);
     }
+  };
+
+  const handleViewProfile = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    e.stopPropagation();
+    router.push(`/user/${user.id}`);
   };
 
   const getRoleColor = (role: UserCardProps["user"]["role"]): "default" | "primary" | "secondary" => {
@@ -79,6 +92,9 @@ export default function UserCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       elevation={isHovered ? 4 : 2}
+      sx={{ cursor: "pointer" }}
+      component={Link}
+      href={`/user/${user.id}`}
     >
       <CardContent className={styles.cardContent}>
         <Box className={styles.header}>
@@ -155,6 +171,7 @@ export default function UserCard({
             variant="contained"
             className={styles.viewButton}
             size="small"
+            onClick={handleViewProfile}
           >
             View Profile
           </Button>

@@ -1,0 +1,104 @@
+.container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.backButton {
+  color: var(--color-third) !important;
+}
+
+.paper {
+  padding: 32px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.userHeaderInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.userName {
+  font-weight: 600;
+  margin: 0;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.roleChip,
+.statusChip {
+  width: fit-content;
+}
+
+.infoCard {
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.sectionTitle {
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-third);
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.icon {
+  color: var(--color-first);
+  font-size: 24px;
+  margin-top: 4px;
+}
+
+.bio {
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+  }
+
+  .paper {
+    padding: 24px;
+  }
+}
+

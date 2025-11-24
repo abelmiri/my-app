@@ -3,35 +3,7 @@
 import { Container, Paper, Typography, Box } from "@mui/material";
 import HomePageButtons from "@/components/HomePageButtons";
 import UserCard from "@/components/UserCard";
-import type { User } from "@/components/UserCard/types";
-
-const sampleUsers: User[] = [
-  {
-    id: "1",
-    name: "John Doe",
-    email: "john.doe@example.com",
-    role: "admin",
-    isActive: true,
-    joinDate: new Date("2023-01-15"),
-  },
-  {
-    id: "2",
-    name: "Jane Smith",
-    email: "jane.smith@example.com",
-    role: "user",
-    isActive: true,
-    joinDate: new Date("2023-06-20"),
-    avatar: undefined,
-  },
-  {
-    id: "3",
-    name: "Bob Johnson",
-    email: "bob.johnson@example.com",
-    role: "guest",
-    isActive: false,
-    joinDate: new Date("2024-01-10"),
-  },
-];
+import { mockUsers } from "@/lib/users";
 
 export default function HomePage() {
   const handleEdit = (userId: string): void => {
@@ -71,7 +43,7 @@ export default function HomePage() {
             gap: 3,
           }}
         >
-          {sampleUsers.map((user) => (
+          {mockUsers.map((user) => (
             <UserCard
               key={user.id}
               user={user}
