@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+/.idea
 
 # debug
 npm-debug.log*
@@ -42,3 +43,8 @@ next-env.d.ts
 
 # cursor
 .cursor/rules
+
+$ lock
+package-lock.json
+bun.lock
+yarn.lock
