@@ -1,4 +1,4 @@
-import { Box } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import SecureEscrow from "@/media/svg/SecureEscrow"
 import styles from "./styles/Header.module.scss"
 
@@ -13,6 +13,7 @@ export default function Header() {
           strokeColor="white"
         />
       </Box>
+      <Typography className={styles.title}>سکیوراسکرو</Typography>
     </Box>
   )
 }

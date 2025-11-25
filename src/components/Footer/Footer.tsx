@@ -131,6 +131,8 @@ export default function Footer() {
           </Box>
         </Box>
 
+        <Box className={styles.divider} />
+
         <Typography className={styles.copyright}>
           © ۲۰۲۵ سکیوراسکرو. تمامی حقوق محفوظ است. سرویس اسکرو دارای مجوز و تحت نظارت.
         </Typography>

@@ -17,3 +17,13 @@
   font-size: 60px !important;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .firstLine {
+    font-size: 46px !important;
+  }
+
+  .secondLine {
+    font-size: 46px !important;
+  }
+}

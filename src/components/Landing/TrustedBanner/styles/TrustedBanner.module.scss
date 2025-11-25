@@ -9,9 +9,7 @@
   width: fit-content;
   cursor: default;
   user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  margin-block-start: 8px;
 }
 
 .icon {
@@ -23,4 +21,10 @@
   font-size: 0.9rem !important;
   font-weight: 400;
   white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .trustedBanner {
+    margin-block-start: 50px;
+  }
 }
