@@ -1,0 +1,39 @@
+import { SVGProps } from "react"
+
+export interface CircleVerifiedProps extends SVGProps<SVGSVGElement> {
+  strokeColor?: string
+}
+
+export default function CircleVerified({
+  strokeColor = "white",
+  width = 28,
+  height = 28,
+  ...props
+}: CircleVerifiedProps) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M25.4345 11.6667C25.9673 14.2815 25.5876 17 24.3587 19.3687C23.1297 21.7375 21.1259 23.6134 18.6813 24.6835C16.2367 25.7537 13.4991 25.9534 10.925 25.2494C8.35097 24.5454 6.09606 22.9803 4.53632 20.815C2.97659 18.6497 2.20631 16.0151 2.35394 13.3506C2.50158 10.6861 3.55819 8.15276 5.34759 6.17302C7.13699 4.19328 9.55101 2.88682 12.1871 2.47152C14.8231 2.05621 17.5219 2.55716 19.8333 3.89082"
+        stroke={strokeColor}
+        strokeWidth="2.33333"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.5 12.8334L14 16.3334L25.6667 4.66675"
+        stroke={strokeColor}
+        strokeWidth="2.33333"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+

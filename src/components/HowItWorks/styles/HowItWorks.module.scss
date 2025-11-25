@@ -26,13 +26,13 @@
 }
 
 .cardsContainer {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 32px !important;
   width: 100%;
   max-width: 1200px;
-  flex-wrap: wrap;
-  margin-bottom: 64px;
+  flex-wrap: wrap !important;
+  margin-bottom: 64px !important;
 }
 
 .card {

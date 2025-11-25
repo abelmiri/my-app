@@ -48,6 +48,10 @@
   --color-secondary: #8200db; /* Flat purple */
   --color-third: #3498db; /* Flat blue */
 
+  --green-gradient: background: linear-gradient(135deg, #00C950 0%, #009966 100%);
+  --purple-gradient: background: linear-gradient(135deg, #AD46FF 0%, #9810FA 100%);
+  --blue-gradient: background: linear-gradient(135deg, #2B7FFF 0%, #0092B8 100%);
+
   /* Border Radius */
   --border-radius-icon: 14px;
   --border-radius-full: 999px;

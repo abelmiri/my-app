@@ -3,6 +3,7 @@
 import LandingInfo from "@/components/LandingInfo/LandingInfo"
 import TrustedPartnersCard from "@/components/TrustedPartnersCard/TrustedPartnersCard"
 import HowItWorks from "@/components/HowItWorks/HowItWorks"
+import WhyChooseUs from "@/components/WhyChooseUs/WhyChooseUs"
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <LandingInfo />
       <TrustedPartnersCard />
       <HowItWorks />
+      <WhyChooseUs />
     </>
   )
 }
