@@ -4,8 +4,8 @@ import styles from "./styles/LandingHeadingDescription.module.scss"
 export default function LandingHeadingDescription() {
   return (
     <Typography className={styles.description}>
-      The world's most trusted escrow platform. Buy and sell with confidence,
-      protected by our secure payment system and professional support.
+      پلتفرم اسکرو مورد اعتمادترین در جهان. با اطمینان خرید و فروش کنید، محافظت
+      شده توسط سیستم پرداخت امن ما و پشتیبانی حرفه‌ای.
     </Typography>
   )
 }

@@ -8,13 +8,13 @@ import { ReactNode } from "react"
 import AuthProvider from "@/context/auth/authProvider"
 
 export const metadata: Metadata = {
-  title: "My Material App",
+  title: "اپلیکیشن متریال من",
   description: "Next.js + TypeScript + MUI design system",
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <body>
         <MuiThemeProvider>
           <AuthProvider>

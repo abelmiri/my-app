@@ -46,7 +46,7 @@ export default function UserPage() {
         >
           <CircularProgress />
           <Typography variant="body1" color="text.secondary">
-            Loading user information...
+            در حال بارگذاری اطلاعات کاربر...
           </Typography>
         </Box>
       </Container>
@@ -57,7 +57,7 @@ export default function UserPage() {
     return (
       <Container maxWidth="md" sx={{ mt: 8 }}>
         <Typography variant="h4" color="error">
-          User not found
+          کاربر یافت نشد
         </Typography>
       </Container>
     )

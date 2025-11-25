@@ -1,3 +1,43 @@
+@font-face {
+  font-family: "Dana";
+  src: url("/media/fonts/Dana-fanum-regular.woff2") format("woff2"),
+    url("/media/fonts/Dana-fanum-regular.woff") format("woff"),
+    url("/media/fonts/Dana-FaNum-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dana";
+  src: url("/media/fonts/Dana-fanum-light.woff2") format("woff2"),
+    url("/media/fonts/Dana-fanum-light.woff") format("woff"),
+    url("/media/fonts/Dana-FaNum-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dana";
+  src: url("/media/fonts/Dana-fanum-medium.woff2") format("woff2"),
+    url("/media/fonts/Dana-fanum-medium.woff") format("woff"),
+    url("/media/fonts/Dana-FaNum-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dana";
+  src: url("/media/fonts/Dana-fanum-bold.woff2") format("woff2"),
+    url("/media/fonts/Dana-fanum-bold.woff") format("woff"),
+    url("/media/fonts/Dana-FaNum-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -30,10 +70,14 @@ body {
   overflow-x: hidden;
 }
 
+html[dir="rtl"] {
+  direction: rtl;
+}
+
 body {
   color: var(--foreground);
   background: var(--color-secondary);
-  font-family: Arial, sans-serif;
+  font-family: "Dana", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

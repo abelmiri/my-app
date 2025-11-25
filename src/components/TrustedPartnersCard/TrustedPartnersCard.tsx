@@ -14,7 +14,7 @@ const defaultPartners: string[] = [
 export default function TrustedPartnersCard() {
   return (
     <Box className={styles.card}>
-      <Typography className={styles.title}>Trusted payment partners</Typography>
+      <Typography className={styles.title}>شرکای پرداخت معتبر</Typography>
       <Box className={styles.partnersContainer}>
         {defaultPartners.map((partner, index) => (
           <Typography

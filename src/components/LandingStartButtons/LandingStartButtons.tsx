@@ -13,7 +13,7 @@ export default function LandingStartButtons() {
   return (
     <Box className={styles.buttonContainer}>
       <Button variant="outlined" className={styles.button} onClick={login}>
-        Get Started
+        شروع کنید
         <Box className={styles.iconWrapper}>
           <SmallArrow
             width={16}
@@ -22,9 +22,9 @@ export default function LandingStartButtons() {
           />
         </Box>
       </Button>
-      <Button variant="outlined" className={styles.button}>
+      {/* <Button variant="outlined" className={styles.button}> */}
         {/* Second button content - to be specified */}
-      </Button>
+      {/* </Button> */}
     </Box>
   )
 }

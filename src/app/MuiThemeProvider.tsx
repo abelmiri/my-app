@@ -5,6 +5,7 @@ import { ReactNode } from "react"
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material"
 
 const theme = createTheme({
+  direction: "rtl",
   palette: {
     mode: "light",
     primary: {
@@ -16,7 +17,8 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [
-      "Roboto",
+      "Dana",
+      "Arial",
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',

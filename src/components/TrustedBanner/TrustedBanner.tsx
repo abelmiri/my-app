@@ -9,7 +9,7 @@ export default function TrustedBanner() {
     <Box className={styles.trustedBanner}>
       <TrustedBadge width={16} height={16} className={styles.icon} />
       <Typography className={styles.text}>
-        Trusted by 500,000+ users worldwide
+        مورد اعتماد بیش از ۵۰۰,۰۰۰ کاربر در سراسر جهان
       </Typography>
     </Box>
   )

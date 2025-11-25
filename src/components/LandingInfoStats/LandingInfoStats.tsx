@@ -11,15 +11,15 @@ interface StatItem {
 const defaultStats: StatItem[] = [
   {
     value: "$2.5B+",
-    label: "Transactions Secured",
+    label: "تراکنش‌های امن",
   },
   {
     value: "500K+",
-    label: "Happy Users",
+    label: "کاربران راضی",
   },
   {
     value: "4.9/5",
-    label: "User Rating",
+    label: "امتیاز کاربران",
   },
 ]
 
