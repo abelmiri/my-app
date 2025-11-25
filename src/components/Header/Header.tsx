@@ -1,11 +1,10 @@
 import { Box } from "@mui/material"
-import type { HeaderProps } from "./types"
 import SecureEscrow from "@/media/svg/SecureEscrow"
 import styles from "./styles/Header.module.scss"
 
-export default function Header({ className }: HeaderProps) {
+export default function Header() {
   return (
-    <Box component="header" className={`${styles.header} ${className || ""}`}>
+    <Box component="header" className={styles.header}>
       <Box className={styles.iconContainer}>
         <SecureEscrow
           width={20}

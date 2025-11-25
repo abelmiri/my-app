@@ -49,15 +49,14 @@ alwaysApply: true
   - Each component should have its own directory structure:
     ```
     ComponentName/
-      ComponentName.tsx
-      types.ts (TypeScript interfaces and types)
+      ComponentName.tsx (with types defined at the top of the file)
       styles/
         ComponentName.module.scss
-      index.ts (for cleaner imports - re-export component and types)
     ```
-- **ALWAYS create a `types.ts` file** for component-specific TypeScript interfaces and types
-- **ALWAYS create an `index.ts` file** that exports the component and its types for cleaner imports
-- Types should be co-located with components unless shared across multiple components
+- **Types MUST be defined at the top of the component file** - do NOT create separate `types.ts` files
+- **Do NOT create `index.ts` files** - they increase bundle size unnecessarily. Next.js automatically resolves imports to `ComponentName.tsx`
+- Only define props that are actually used - remove unnecessary props to keep components simple
+- Types should be defined as interfaces at the top of the component file, before the component implementation
 
 ### 5. Styling with SCSS
 
@@ -68,6 +67,9 @@ alwaysApply: true
 - SCSS files should be placed in `componentName/styles/` directory
 - Follow Material Design spacing and design tokens in SCSS
 - Use SCSS features: variables, nesting, mixins, and media queries
+- **Prefer SCSS modules over inline `sx` props** - use `sx` only when absolutely necessary
+- Use `!important` when needed to override Material UI default styles
+- Use CSS variables from `globals.css` for colors and design tokens (e.g., `var(--color-secondary)`, `var(--color-text-primary)`)
 - Example structure:
 
   ```typescript
@@ -79,14 +81,25 @@ alwaysApply: true
   }
   ```
 
-### 6. Code Quality
+### 6. CSS Variables and Global Styles
+
+- **Define reusable design tokens in `globals.css`** as CSS variables
+- Use CSS variables for colors, spacing, and other design tokens (e.g., `var(--color-secondary)`, `var(--color-text-primary)`)
+- Common CSS variables should include:
+  - Color variables: `--color-secondary`, `--color-text-primary`, `--color-text-secondary`
+  - Border radius: `--border-radius-icon`, `--border-radius-full`
+  - Other design tokens as needed
+- Reference CSS variables in SCSS modules: `color: var(--color-text-primary);`
+- Keep global styles minimal - prefer component-scoped SCSS modules
+
+### 7. Code Quality
 
 - Use ESLint configuration provided by Next.js
 - Follow React best practices (hooks, component composition)
 - Write clean, maintainable, and well-documented code
 - Use meaningful variable and function names
 
-### 7. Package Management
+### 8. Package Management
 
 - **ALWAYS use bun or yarn for package management** (prefer bun if available, fallback to yarn)
 - Never use npm directly for installing packages
@@ -94,7 +107,7 @@ alwaysApply: true
 - Use `bun add -d <package>` or `yarn add -D <package>` for dev dependencies
 - Use `bun install` or `yarn install` to install all dependencies
 
-### 8. Navigation and Routing
+### 9. Navigation and Routing
 
 - **ALWAYS use Next.js App Router** for navigation and routing
 - Use `next/link` Link component for client-side navigation
@@ -112,17 +125,20 @@ alwaysApply: true
 - When making entire cards/components clickable, use `component={Link}` prop on Material UI Card/Paper components
 - Avoid nested Link components - use event handlers with router.push() for nested buttons
 
-### 9. Data Management and Utilities
+### 10. Data Management and Utilities
 
 - **ALWAYS create centralized data/utility files** in `src/lib/` directory
 - Group related data and functions together (e.g., `src/lib/users.ts` for user-related data and functions)
 - Export data arrays/objects and utility functions from lib files
-- Use TypeScript types from component types files when possible
+- Define types inline in lib files or import from component files if needed
 - Example structure:
 
   ```typescript
   // src/lib/resource.ts
-  import type { Resource } from "@/components/Resource/types";
+  interface Resource {
+    id: string;
+    name: string;
+  }
 
   export const mockResources: Resource[] = [...];
 
@@ -131,7 +147,7 @@ alwaysApply: true
   }
   ```
 
-### 10. Component Interaction Patterns
+### 11. Component Interaction Patterns
 
 - When components need to navigate, pass navigation handlers or use Next.js router directly
 - For clickable cards that contain action buttons:
@@ -149,12 +165,11 @@ alwaysApply: true
 
 ## File Naming Conventions
 
-- Components: `ComponentName.tsx`
+- Components: `ComponentName.tsx` (with types defined at the top)
 - Utilities: `utilityName.ts`
-- Types: `types.ts` (ALWAYS co-located with components in component directory)
 - Styles: `ComponentName.module.scss` in `styles/` subdirectory within component folder
-- Index files: `index.ts` (for cleaner imports - re-export component and types)
 - Data/Utilities: `resourceName.ts` in `src/lib/` directory
+- **Do NOT create** `types.ts` or `index.ts` files - keep component structure simple
 
 ## Import Organization
 
@@ -167,35 +182,23 @@ alwaysApply: true
 // ComponentName.tsx
 "use client"; // Only if client-side features are needed
 
-import React from "react";
-import type { ComponentNameProps } from "./types";
+import { Box } from "@mui/material";
 import styles from "./styles/ComponentName.module.scss";
 
-export default function ComponentName({ prop1, prop2 }: ComponentNameProps) {
-  // Component implementation following Material Design principles
-  return (
-    <div className={styles.container}>
-      {/* JSX with Material Design components */}
-    </div>
-  );
-}
-```
-
-```typescript
-// types.ts
-export interface ComponentNameProps {
+interface ComponentNameProps {
   prop1: string;
   prop2: number;
   optionalProp?: boolean;
 }
 
-export type ComponentNameType = ComponentNameProps["prop1"];
-```
-
-```typescript
-// index.ts
-export { default } from "./ComponentName";
-export type { ComponentNameProps, ComponentNameType } from "./types";
+export default function ComponentName({ prop1, prop2 }: ComponentNameProps) {
+  // Component implementation following Material Design principles
+  return (
+    <Box className={styles.container}>
+      {/* JSX with Material Design components */}
+    </Box>
+  );
+}
 ```
 
 ```scss
@@ -203,9 +206,21 @@ export type { ComponentNameProps, ComponentNameType } from "./types";
 .container {
   padding: 16px;
   margin: 8px;
+  color: var(--color-text-primary);
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     padding: 12px;
   }
+}
+```
+
+**Note:** For simple components without props, you can omit the props interface entirely:
+```typescript
+// SimpleComponent.tsx
+import { Box } from "@mui/material";
+import styles from "./styles/SimpleComponent.module.scss";
+
+export default function SimpleComponent() {
+  return <Box className={styles.container}>Content</Box>;
 }
 ```

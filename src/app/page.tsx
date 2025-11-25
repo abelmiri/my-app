@@ -1,10 +1,10 @@
 "use client"
 
 import { Container, Paper, Typography, Box } from "@mui/material"
-import HomePageButtons from "@/components/HomePageButtons"
-import UserCard from "@/components/UserCard"
-import LandingInfo from "@/components/LandingInfo"
-import TrustedPartnersCard from "@/components/TrustedPartnersCard"
+import HomePageButtons from "@/components/HomePageButtons/HomePageButtons"
+import UserCard from "@/components/UserCard/UserCard"
+import LandingInfo from "@/components/LandingInfo/LandingInfo"
+import TrustedPartnersCard from "@/components/TrustedPartnersCard/TrustedPartnersCard"
 import { mockUsers } from "@/lib/users"
 
 export default function HomePage() {

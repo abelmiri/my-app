@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 import MuiThemeProvider from "./MuiThemeProvider"
-import Header from "@/components/Header"
+import Header from "@/components/Header/Header"
 import { ReactNode } from "react"
 import AuthProvider from "@/context/auth/authProvider"
 

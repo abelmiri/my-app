@@ -1,18 +1,16 @@
 "use client"
 
 import { Box, Typography } from "@mui/material"
-import type { TrustedBannerProps } from "./types"
 import TrustedBadge from "@/media/svg/TrustedBadge"
 import styles from "./styles/TrustedBanner.module.scss"
 
-export default function TrustedBanner({
-  className,
-  text = "Trusted by 500,000+ users worldwide",
-}: TrustedBannerProps) {
+export default function TrustedBanner() {
   return (
-    <Box className={`${styles.trustedBanner} ${className || ""}`}>
+    <Box className={styles.trustedBanner}>
       <TrustedBadge width={16} height={16} className={styles.icon} />
-      <Typography className={styles.text}>{text}</Typography>
+      <Typography className={styles.text}>
+        Trusted by 500,000+ users worldwide
+      </Typography>
     </Box>
   )
 }

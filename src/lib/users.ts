@@ -1,4 +1,19 @@
-import type { User } from "@/components/UserCard/types"
+export interface User {
+  id: string
+  name: string
+  email: string
+  avatar?: string
+  role: "admin" | "user" | "guest"
+  isActive: boolean
+  joinDate: Date
+  bio?: string
+  location?: string
+  phone?: string
+  department?: string
+  lastLogin?: Date
+}
+
+export type UserRole = User["role"]
 
 export const mockUsers: User[] = [
   {

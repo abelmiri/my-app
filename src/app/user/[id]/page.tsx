@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { Container, Typography, CircularProgress, Box } from "@mui/material"
-import UserDetail from "@/components/UserDetail"
+import UserDetail from "@/components/UserDetail/UserDetail"
 import { getUserById } from "@/lib/users"
-import type { User } from "@/components/UserCard/types"
+import type { User } from "@/lib/users"
 
 export default function UserPage() {
   const params = useParams()

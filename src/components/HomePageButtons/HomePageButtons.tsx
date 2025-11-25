@@ -1,8 +1,14 @@
 import { Button, Box } from "@mui/material"
-import type { HomePageButtonsProps, ButtonConfig } from "./types"
 import styles from "./styles/HomePageButtons.module.scss"
 
-const defaultButtons: HomePageButtonsProps["buttons"] = [
+interface ButtonConfig {
+  label: string
+  variant: "contained" | "outlined" | "text"
+  colorType: "first" | "secondary" | "third"
+  onClick?: () => void
+}
+
+const defaultButtons: ButtonConfig[] = [
   {
     label: "First Color",
     variant: "contained",
@@ -20,10 +26,7 @@ const defaultButtons: HomePageButtonsProps["buttons"] = [
   },
 ]
 
-export default function HomePageButtons({
-  buttons = defaultButtons,
-  className,
-}: HomePageButtonsProps) {
+export default function HomePageButtons() {
   const getButtonClassName = (colorType: string): string => {
     switch (colorType) {
       case "first":
@@ -37,12 +40,9 @@ export default function HomePageButtons({
     }
   }
 
-  const buttonsToRender: ButtonConfig[] = (buttons ??
-    defaultButtons) as ButtonConfig[]
-
   return (
-    <Box className={`${styles.buttonContainer} ${className || ""}`}>
-      {buttonsToRender.map((button, index) => (
+    <Box className={styles.buttonContainer}>
+      {defaultButtons.map((button, index) => (
         <Button
           key={`${button.label}-${index}`}
           variant={button.variant}

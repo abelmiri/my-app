@@ -24,8 +24,12 @@ import {
   ArrowBack as ArrowBackIcon,
 } from "@mui/icons-material"
 import Link from "next/link"
-import type { UserDetailProps } from "./types"
+import type { User } from "@/lib/users"
 import styles from "./styles/UserDetail.module.scss"
+
+interface UserDetailProps {
+  user: User
+}
 
 export default function UserDetail({ user }: UserDetailProps) {
   const formatDate = (date: Date): string => {

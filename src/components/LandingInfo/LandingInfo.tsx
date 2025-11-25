@@ -1,16 +1,15 @@
 import Image from "next/image"
 import { Box } from "@mui/material"
-import type { LandingInfoProps } from "./types"
-import TrustedBanner from "@/components/TrustedBanner"
-import LandingHeading from "@/components/LandingHeading"
-import LandingHeadingDescription from "@/components/LandingHeadingDescription"
-import LandingStartButtons from "@/components/LandingStartButtons"
-import LandingInfoStats from "@/components/LandingInfoStats"
+import TrustedBanner from "@/components/TrustedBanner/TrustedBanner"
+import LandingHeading from "@/components/LandingHeading/LandingHeading"
+import LandingHeadingDescription from "@/components/LandingHeadingDescription/LandingHeadingDescription"
+import LandingStartButtons from "@/components/LandingStartButtons/LandingStartButtons"
+import LandingInfoStats from "@/components/LandingInfoStats/LandingInfoStats"
 import styles from "./styles/LandingInfo.module.scss"
 
-export default function LandingInfo({ className }: LandingInfoProps) {
+export default function LandingInfo() {
   return (
-    <Box className={`${styles.landingInfo} ${className || ""}`}>
+    <Box className={styles.landingInfo}>
       <Box className={styles.contentContainer}>
         <Box className={styles.leftSection}>
           <TrustedBanner />

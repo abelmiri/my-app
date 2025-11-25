@@ -21,8 +21,16 @@ import {
   Email as EmailIcon,
   Person as PersonIcon,
 } from "@mui/icons-material"
-import type { UserCardProps } from "./types"
+import type { User } from "@/lib/users"
 import styles from "./styles/UserCard.module.scss"
+
+interface UserCardProps {
+  user: User
+  onEdit?: (userId: string) => void
+  onDelete?: (userId: string) => void
+  showActions?: boolean
+  className?: string
+}
 
 export default function UserCard({
   user,
@@ -57,7 +65,7 @@ export default function UserCard({
   }
 
   const getRoleColor = (
-    role: UserCardProps["user"]["role"],
+    role: User["role"],
   ): "default" | "primary" | "secondary" => {
     switch (role) {
       case "admin":
