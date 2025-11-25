@@ -5,6 +5,8 @@ import TrustedPartnersCard from "@/components/Landing/TrustedPartnersCard/Truste
 import HowItWorks from "@/components/Landing/HowItWorks/HowItWorks"
 import WhyChooseUs from "@/components/Landing/WhyChooseUs/WhyChooseUs"
 import PerfectTransaction from "@/components/Landing/PerfectTransaction/PerfectTransaction"
+import Testimonials from "@/components/Landing/Testimonials/Testimonials"
+import ReadyToStart from "@/components/Landing/ReadyToStart/ReadyToStart"
 
 export default function HomePage() {
   return (
@@ -14,6 +16,8 @@ export default function HomePage() {
       <HowItWorks />
       <WhyChooseUs />
       <PerfectTransaction />
+      <Testimonials />
+      <ReadyToStart />
     </>
   )
 }

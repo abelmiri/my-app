@@ -1,0 +1,109 @@
+.container {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 64px;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.title {
+  font-size: 36px !important;
+  font-weight: 400 !important;
+  color: #101828;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 20px !important;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 1200px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 300px;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.reviewText {
+  font-size: 16px !important;
+  color: var(--color-text-secondary);
+  line-height: 1.6 !important;
+  flex: 1;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.avatarContainer {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.userName {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #101828;
+}
+
+.userTitle {
+  font-size: 14px !important;
+  color: var(--color-text-secondary);
+}
