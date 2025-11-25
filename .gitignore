@@ -44,7 +44,7 @@ next-env.d.ts
 # cursor
 .cursor/rules
 
-$ lock
+# lock
 package-lock.json
 bun.lock
 yarn.lock
