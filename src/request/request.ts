@@ -10,6 +10,8 @@ import type {
   RequestPostType,
 } from "@/request/RequestTypes"
 import authActions from "@/context/auth/authActions"
+import { toastManager } from "@/lib/toastManager"
+import { getErrorMessage, toastConstant } from "@/lib/errorHelpers"
 
 function get({
   url,
@@ -204,12 +206,17 @@ function _networkErrorHandler({
 
     if (isServerErr) {
       if (typeof window !== "undefined" && !dontToast) {
-        // toastManager.addToast({message: getErrorMessage({status: err?.status, data: err?.data}), type: "FAIL"})
+        toastManager.addToast({
+          message: getErrorMessage({ status: err?.status, data: err?.data }),
+          type: "FAIL",
+        })
       }
     } else {
       if (typeof window !== "undefined" && !dontToast) {
-        // const toastConstant = getToastConstant()
-        // toastManager.addToast({message: toastConstant.networkError, type: "FAIL"})
+        toastManager.addToast({
+          message: toastConstant.networkError,
+          type: "FAIL",
+        })
       }
     }
   }

@@ -27,6 +27,9 @@ const theme = createTheme({
   },
 })
 
+import { SnackbarProvider } from "notistack"
+import ToastRegistry from "@/components/ToastRegistry/ToastRegistry"
+
 type Props = {
   children: ReactNode
 }
@@ -35,7 +38,10 @@ export default function MuiThemeProvider({ children }: Props) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {children}
+      <SnackbarProvider maxSnack={3} anchorOrigin={{ vertical: "top", horizontal: "left" }}>
+        <ToastRegistry />
+        {children}
+      </SnackbarProvider>
     </ThemeProvider>
   )
 }
