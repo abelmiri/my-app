@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export default function UserOutlineIcon({
   width = "48",
@@ -7,11 +7,11 @@ export default function UserOutlineIcon({
   className = "",
   style,
 }: {
-  width?: string;
-  height?: string;
-  color?: string;
-  className?: string;
-  style?: React.CSSProperties;
+  width?: string
+  height?: string
+  color?: string
+  className?: string
+  style?: React.CSSProperties
 }) {
   return (
     <svg
@@ -38,6 +38,5 @@ export default function UserOutlineIcon({
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }
-

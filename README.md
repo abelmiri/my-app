@@ -88,36 +88,37 @@ For React Components, you can use the `useSnackbar` hook from `notistack`.
 For non-component files (like API services), use the global `toastManager`:
 
 ```typescript
-import { toastManager } from "@/lib/toastManager";
+import { toastManager } from "@/lib/toastManager"
 
 // Success
-toastManager.addToast({ message: "Operation successful", type: "SUCCESS" });
+toastManager.addToast({ message: "Operation successful", type: "SUCCESS" })
 
 // Error
-toastManager.addToast({ message: "Something went wrong", type: "FAIL" });
+toastManager.addToast({ message: "Something went wrong", type: "FAIL" })
 ```
 
 ### API Requests
 
 Use the centralized `request` helper. It automatically handles:
+
 - Content-Type headers
 - Auth tokens
 - Error parsing
 - **Automatic Toast Notifications** for errors (can be disabled with `dontToast: true`)
 
 ```typescript
-import request from "@/request/request";
-import { API_URLS } from "@/constants/urls/API_URLS";
+import request from "@/request/request"
+import { API_URLS } from "@/constants/urls/API_URLS"
 
 // Simple GET
-const data = await request.get({ url: API_URLS.profile });
+const data = await request.get({ url: API_URLS.profile })
 
 // POST with no error toast
-await request.post({ 
-  url: API_URLS.login, 
+await request.post({
+  url: API_URLS.login,
   data: loginData,
-  dontToast: true 
-});
+  dontToast: true,
+})
 ```
 
 ## Learn More

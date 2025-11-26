@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export default function SpeechBubbleIcon({
   width = "64",
@@ -7,11 +7,11 @@ export default function SpeechBubbleIcon({
   className = "",
   style,
 }: {
-  width?: string;
-  height?: string;
-  color?: string;
-  className?: string;
-  style?: React.CSSProperties;
+  width?: string
+  height?: string
+  color?: string
+  className?: string
+  style?: React.CSSProperties
 }) {
   return (
     <svg
@@ -31,6 +31,5 @@ export default function SpeechBubbleIcon({
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }
-

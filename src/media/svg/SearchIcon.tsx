@@ -1,13 +1,13 @@
-import React from "react";
+import React from "react"
 
 export default function SearchIcon({
   width = "20",
   height = "20",
   color = "#99A1AF",
 }: {
-  width?: string;
-  height?: string;
-  color?: string;
+  width?: string
+  height?: string
+  color?: string
 }) {
   return (
     <svg
@@ -32,6 +32,5 @@ export default function SearchIcon({
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }
-

@@ -1,6 +1,6 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
-import styles from "./styles/AboutUs.module.scss";
+import React from "react"
+import { Box, Typography } from "@mui/material"
+import styles from "./styles/AboutUs.module.scss"
 
 export default function AboutUs() {
   return (
@@ -8,11 +8,11 @@ export default function AboutUs() {
       <Typography variant="h1" className={styles.title}>
         درباره سکیوراسکرو
       </Typography>
-      
+
       <Typography variant="body1" className={styles.description}>
-        ایجاد اعتماد در معاملات آنلاین از سال ۲۰۱۰. ما مورد اعتمادترین سرویس اسکرو در جهان هستیم.
+        ایجاد اعتماد در معاملات آنلاین از سال ۲۰۱۰. ما مورد اعتمادترین سرویس
+        اسکرو در جهان هستیم.
       </Typography>
     </Box>
-  );
+  )
 }
-

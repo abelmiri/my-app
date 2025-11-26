@@ -1,10 +1,10 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
-import DollarSign from "@/media/svg/DollarSign";
-import GlobeIcon from "@/media/svg/GlobeIcon";
-import Badge from "@/media/svg/Badge";
-import styles from "./styles/AboutStats.module.scss";
-import BuyerSeller from "@/media/svg/BuyerSeller";
+import React from "react"
+import { Box, Typography } from "@mui/material"
+import DollarSign from "@/media/svg/DollarSign"
+import GlobeIcon from "@/media/svg/GlobeIcon"
+import Badge from "@/media/svg/Badge"
+import styles from "./styles/AboutStats.module.scss"
+import BuyerSeller from "@/media/svg/BuyerSeller"
 
 const stats = [
   {
@@ -27,7 +27,7 @@ const stats = [
     value: "15+",
     label: "سال تجربه",
   },
-];
+]
 
 export default function AboutStats() {
   return (
@@ -40,6 +40,5 @@ export default function AboutStats() {
         </Box>
       ))}
     </section>
-  );
+  )
 }
-

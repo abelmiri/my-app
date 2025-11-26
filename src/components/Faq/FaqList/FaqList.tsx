@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import React, { useState, useMemo } from "react";
-import { Box, Typography } from "@mui/material";
-import ChevronIcon from "@/media/svg/ChevronIcon";
-import styles from "./styles/FaqList.module.scss";
+import React, { useState, useMemo } from "react"
+import { Box, Typography } from "@mui/material"
+import ChevronIcon from "@/media/svg/ChevronIcon"
+import styles from "./styles/FaqList.module.scss"
 
-type Category = "General" | "Buyers" | "Sellers" | "Payments" | "Security";
+type Category = "General" | "Buyers" | "Sellers" | "Payments" | "Security"
 
 const categories: { id: Category; label: string }[] = [
   { id: "General", label: "عمومی" },
@@ -13,7 +13,7 @@ const categories: { id: Category; label: string }[] = [
   { id: "Sellers", label: "برای فروشندگان" },
   { id: "Payments", label: "پرداخت‌ها" },
   { id: "Security", label: "امنیت" },
-];
+]
 
 const faqs: Record<Category, { question: string; answer: string }[]> = {
   General: [
@@ -41,55 +41,67 @@ const faqs: Record<Category, { question: string; answer: string }[]> = {
   Buyers: [
     {
       question: "چگونه می‌توانم سفارش خود را ثبت کنم؟",
-      answer: "برای ثبت سفارش کافیست وارد حساب کاربری خود شوید و با انتخاب گزینه معامله جدید، مشخصات کالا و طرف مقابل را وارد کنید.",
+      answer:
+        "برای ثبت سفارش کافیست وارد حساب کاربری خود شوید و با انتخاب گزینه معامله جدید، مشخصات کالا و طرف مقابل را وارد کنید.",
     },
     {
       question: "اگر فروشنده کالا را ارسال نکند چه می‌شود؟",
-      answer: "در صورتی که فروشنده در مهلت مقرر کالا را ارسال نکند، می‌توانید درخواست لغو معامله دهید و وجه پرداختی به حساب شما بازگردانده می‌شود.",
+      answer:
+        "در صورتی که فروشنده در مهلت مقرر کالا را ارسال نکند، می‌توانید درخواست لغو معامله دهید و وجه پرداختی به حساب شما بازگردانده می‌شود.",
     },
     {
       question: "آیا می‌توانم قبل از آزادسازی وجه کالا را بررسی کنم؟",
-      answer: "بله، شما یک دوره بازرسی توافق شده دارید تا کالا را بررسی کنید و در صورت عدم رضایت، آن را مرجوع کنید.",
+      answer:
+        "بله، شما یک دوره بازرسی توافق شده دارید تا کالا را بررسی کنید و در صورت عدم رضایت، آن را مرجوع کنید.",
     },
     {
       question: "چگونه می‌توانم یک معامله را لغو کنم؟",
-      answer: "تا قبل از ارسال کالا توسط فروشنده، می‌توانید درخواست لغو دهید. پس از ارسال، لغو معامله منوط به توافق طرفین یا رد کالا در دوره بازرسی است.",
+      answer:
+        "تا قبل از ارسال کالا توسط فروشنده، می‌توانید درخواست لغو دهید. پس از ارسال، لغو معامله منوط به توافق طرفین یا رد کالا در دوره بازرسی است.",
     },
   ],
   Sellers: [
     {
       question: "کارمزد فروش چقدر است؟",
-      answer: "کارمزد فروش بسته به مبلغ معامله متغیر است و معمولاً بین ۱ تا ۲ درصد مبلغ کل معامله می‌باشد. می‌توانید از ماشین‌حساب کارمزد ما استفاده کنید.",
+      answer:
+        "کارمزد فروش بسته به مبلغ معامله متغیر است و معمولاً بین ۱ تا ۲ درصد مبلغ کل معامله می‌باشد. می‌توانید از ماشین‌حساب کارمزد ما استفاده کنید.",
     },
     {
       question: "چه زمانی وجه را دریافت می‌کنم؟",
-      answer: "وجه معامله پس از اینکه خریدار کالا را دریافت و تایید کرد، یا پس از اتمام دوره بازرسی بدون ثبت شکایت، فوراً به حساب شما آزاد می‌شود.",
+      answer:
+        "وجه معامله پس از اینکه خریدار کالا را دریافت و تایید کرد، یا پس از اتمام دوره بازرسی بدون ثبت شکایت، فوراً به حساب شما آزاد می‌شود.",
     },
     {
       question: "چگونه ارسال کالا را اثبات کنم؟",
-      answer: "باید شماره پیگیری پستی یا بارنامه معتبر را در پنل کاربری خود ثبت کنید تا سیستم وضعیت ارسال را رهگیری کند.",
+      answer:
+        "باید شماره پیگیری پستی یا بارنامه معتبر را در پنل کاربری خود ثبت کنید تا سیستم وضعیت ارسال را رهگیری کند.",
     },
     {
       question: "اگر خریدار کالا را رد کند چه اتفاقی می‌افتد؟",
-      answer: "خریدار باید کالا را با هزینه خود (مگر توافق دیگری باشد) به شما برگرداند. پس از دریافت و تایید سلامت کالا توسط شما، وجه به خریدار عودت داده می‌شود.",
+      answer:
+        "خریدار باید کالا را با هزینه خود (مگر توافق دیگری باشد) به شما برگرداند. پس از دریافت و تایید سلامت کالا توسط شما، وجه به خریدار عودت داده می‌شود.",
     },
   ],
   Payments: [
     {
       question: "چه روش‌های پرداختی پشتیبانی می‌شود؟",
-      answer: "ما از تمام کارت‌های عضو شتاب و درگاه‌های پرداخت اینترنتی معتبر پشتیبانی می‌کنیم.",
+      answer:
+        "ما از تمام کارت‌های عضو شتاب و درگاه‌های پرداخت اینترنتی معتبر پشتیبانی می‌کنیم.",
     },
     {
       question: "آیا محدودیتی در مبلغ تراکنش وجود دارد؟",
-      answer: "برای مبالغ بسیار بالا ممکن است نیاز به تایید هویت تکمیلی باشد، اما به طور کلی سقف تراکنش‌ها مطابق با قوانین بانکی کشور است.",
+      answer:
+        "برای مبالغ بسیار بالا ممکن است نیاز به تایید هویت تکمیلی باشد، اما به طور کلی سقف تراکنش‌ها مطابق با قوانین بانکی کشور است.",
     },
     {
       question: "بازگشت وجه چگونه انجام می‌شود؟",
-      answer: "در صورت لغو معامله، وجه به همان شماره شبایی که در پروفایل خود ثبت کرده‌اید ظرف ۲۴ تا ۴۸ ساعت کاری واریز می‌شود.",
+      answer:
+        "در صورت لغو معامله، وجه به همان شماره شبایی که در پروفایل خود ثبت کرده‌اید ظرف ۲۴ تا ۴۸ ساعت کاری واریز می‌شود.",
     },
     {
       question: "آیا می‌توانم از ارز دیجیتال استفاده کنم؟",
-      answer: "در حال حاضر تنها پرداخت‌های ریالی پشتیبانی می‌شوند، اما امکان پرداخت با ارزهای دیجیتال در برنامه‌های توسعه آینده ما قرار دارد.",
+      answer:
+        "در حال حاضر تنها پرداخت‌های ریالی پشتیبانی می‌شوند، اما امکان پرداخت با ارزهای دیجیتال در برنامه‌های توسعه آینده ما قرار دارد.",
     },
   ],
   Security: [
@@ -100,49 +112,52 @@ const faqs: Record<Category, { question: string; answer: string }[]> = {
     },
     {
       question: "آیا اطلاعات شخصی من با طرف مقابل به اشتراک گذاشته می‌شود؟",
-      answer: "خیر، تنها اطلاعات ضروری برای انجام معامله (مانند آدرس ارسال برای فروشنده) نمایش داده می‌شود و اطلاعات حساس بانکی کاملاً محرمانه می‌ماند.",
+      answer:
+        "خیر، تنها اطلاعات ضروری برای انجام معامله (مانند آدرس ارسال برای فروشنده) نمایش داده می‌شود و اطلاعات حساس بانکی کاملاً محرمانه می‌ماند.",
     },
     {
       question: "چگونه از کلاهبرداری جلوگیری می‌کنید؟",
-      answer: "سیستم احراز هویت چندمرحله‌ای و نظارت بر تراکنش‌های مشکوک، ریسک کلاهبرداری را به حداقل می‌رساند. همچنین وجوه تا پایان معامله نزد ما امانت می‌ماند.",
+      answer:
+        "سیستم احراز هویت چندمرحله‌ای و نظارت بر تراکنش‌های مشکوک، ریسک کلاهبرداری را به حداقل می‌رساند. همچنین وجوه تا پایان معامله نزد ما امانت می‌ماند.",
     },
     {
       question: "آیا اتصال وب‌سایت امن است؟",
-      answer: "بله، تمامی ارتباطات وب‌سایت با استفاده از گواهینامه SSL رمزنگاری شده است تا امنیت تبادل اطلاعات تضمین شود.",
+      answer:
+        "بله، تمامی ارتباطات وب‌سایت با استفاده از گواهینامه SSL رمزنگاری شده است تا امنیت تبادل اطلاعات تضمین شود.",
     },
   ],
-};
+}
 
 interface FaqListProps {
-  searchTerm: string;
+  searchTerm: string
 }
 
 export default function FaqList({ searchTerm }: FaqListProps) {
-  const [activeCategory, setActiveCategory] = useState<Category>("General");
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [activeCategory, setActiveCategory] = useState<Category>("General")
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+    setOpenIndex(openIndex === index ? null : index)
+  }
 
   // Filter FAQs based on search term
   const filteredFaqs = useMemo(() => {
     if (!searchTerm.trim()) {
-      return faqs[activeCategory];
+      return faqs[activeCategory]
     }
 
-    const term = searchTerm.toLowerCase().trim();
+    const term = searchTerm.toLowerCase().trim()
     // Search across ALL categories when searching
-    const allFaqs = Object.values(faqs).flat();
+    const allFaqs = Object.values(faqs).flat()
     return allFaqs.filter(
       (faq) =>
         faq.question.toLowerCase().includes(term) ||
-        faq.answer.toLowerCase().includes(term)
-    );
-  }, [searchTerm, activeCategory]);
+        faq.answer.toLowerCase().includes(term),
+    )
+  }, [searchTerm, activeCategory])
 
   // Show category tabs only when not searching
-  const showTabs = !searchTerm.trim();
+  const showTabs = !searchTerm.trim()
 
   return (
     <section className={styles.container}>
@@ -155,8 +170,8 @@ export default function FaqList({ searchTerm }: FaqListProps) {
                 activeCategory === category.id ? styles.active : ""
               }`}
               onClick={() => {
-                setActiveCategory(category.id);
-                setOpenIndex(null);
+                setActiveCategory(category.id)
+                setOpenIndex(null)
               }}
             >
               {category.label}
@@ -203,5 +218,5 @@ export default function FaqList({ searchTerm }: FaqListProps) {
         )}
       </div>
     </section>
-  );
+  )
 }

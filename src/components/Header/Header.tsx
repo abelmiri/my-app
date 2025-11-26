@@ -88,7 +88,15 @@ export default function Header() {
   return (
     <Box component="header" className={styles.header}>
       <Box className={styles.rightSection}>
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+        <Link
+          href="/"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            textDecoration: "none",
+          }}
+        >
           <Box className={styles.iconContainer}>
             <SecureEscrow
               width={20}
@@ -103,13 +111,20 @@ export default function Header() {
 
       {/* Desktop Navigation */}
       <Box className={styles.navContainer}>
-        <Button className={styles.startButton} onClick={login}>شروع کنید</Button>
+        <Button className={styles.startButton} onClick={login}>
+          شروع کنید
+        </Button>
 
-        <Button className={styles.loginButton} onClick={login}>ورود</Button>
+        <Button className={styles.loginButton} onClick={login}>
+          ورود
+        </Button>
 
         <Typography className={styles.navItem}>تماس با ما</Typography>
 
-        <Link href="/about" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link
+          href="/about"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
           <Typography className={styles.navItem}>درباره ما</Typography>
         </Link>
 
@@ -135,7 +150,11 @@ export default function Header() {
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
           {resources.map((item) => (
-            <Link key={item.label} href={item.href} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link
+              key={item.label}
+              href={item.href}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <MenuItem
                 onClick={handleCloseResources}
                 className={styles.menuItem}
@@ -204,7 +223,16 @@ export default function Header() {
       >
         <Box className={styles.drawerHeader}>
           <Box className={styles.rightSection}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }} onClick={handleDrawerToggle}>
+            <Link
+              href="/"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                textDecoration: "none",
+              }}
+              onClick={handleDrawerToggle}
+            >
               <Box className={styles.iconContainer}>
                 <SecureEscrow
                   width={20}
@@ -270,7 +298,14 @@ export default function Header() {
                   disablePadding
                   className={styles.drawerSubItem}
                 >
-                  <Link href={item.href} style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}>
+                  <Link
+                    href={item.href}
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                      width: "100%",
+                    }}
+                  >
                     <ListItemButton onClick={handleDrawerToggle}>
                       <ListItemText primary={item.label} />
                     </ListItemButton>
@@ -281,7 +316,15 @@ export default function Header() {
           </Collapse>
 
           <ListItem disablePadding className={styles.drawerItem}>
-            <Link href="/about" style={{ textDecoration: 'none', color: 'inherit', width: '100%' }} onClick={handleDrawerToggle}>
+            <Link
+              href="/about"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                width: "100%",
+              }}
+              onClick={handleDrawerToggle}
+            >
               <ListItemButton>
                 <ListItemText
                   primary="درباره ما"

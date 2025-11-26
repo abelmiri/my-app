@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export default function CircleEarth({
   width = "48",
@@ -7,11 +7,11 @@ export default function CircleEarth({
   className = "",
   style,
 }: {
-  width?: string;
-  height?: string;
-  color?: string;
-  className?: string;
-  style?: React.CSSProperties;
+  width?: string
+  height?: string
+  color?: string
+  className?: string
+  style?: React.CSSProperties
 }) {
   return (
     <svg
@@ -45,6 +45,5 @@ export default function CircleEarth({
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }
-

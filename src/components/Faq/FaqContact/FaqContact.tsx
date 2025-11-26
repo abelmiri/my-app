@@ -1,7 +1,7 @@
-import React from "react";
-import { Box, Typography, Button } from "@mui/material";
-import styles from "./styles/FaqContact.module.scss";
-import ChatIcon from "@/media/svg/ChatIcon";
+import React from "react"
+import { Box, Typography, Button } from "@mui/material"
+import styles from "./styles/FaqContact.module.scss"
+import ChatIcon from "@/media/svg/ChatIcon"
 
 export default function FaqContact() {
   return (
@@ -9,11 +9,11 @@ export default function FaqContact() {
       <div className={styles.iconWrapper}>
         <ChatIcon width="64" height="64" color="#155DFC" />
       </div>
-      
+
       <Typography variant="h2" className={styles.title}>
         هنوز سوالی دارید؟
       </Typography>
-      
+
       <Typography variant="body1" className={styles.description}>
         تیم پشتیبانی ما به‌صورت ۲۴ ساعته آماده پاسخگویی به شماست
       </Typography>
@@ -27,6 +27,5 @@ export default function FaqContact() {
         </Button>
       </div>
     </section>
-  );
+  )
 }
-

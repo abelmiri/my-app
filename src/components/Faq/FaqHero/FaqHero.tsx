@@ -1,11 +1,11 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
-import SearchIcon from "@/media/svg/SearchIcon";
-import styles from "./styles/FaqHero.module.scss";
+import React from "react"
+import { Box, Typography } from "@mui/material"
+import SearchIcon from "@/media/svg/SearchIcon"
+import styles from "./styles/FaqHero.module.scss"
 
 interface FaqHeroProps {
-  searchTerm: string;
-  onSearchChange: (term: string) => void;
+  searchTerm: string
+  onSearchChange: (term: string) => void
 }
 
 export default function FaqHero({ searchTerm, onSearchChange }: FaqHeroProps) {
@@ -14,7 +14,7 @@ export default function FaqHero({ searchTerm, onSearchChange }: FaqHeroProps) {
       <Typography variant="h1" className={styles.title}>
         سوالات متداول
       </Typography>
-      
+
       <Typography variant="body1" className={styles.description}>
         پاسخ سوالات متداول درباره سرویس‌های اسکرو را پیدا کنید
       </Typography>
@@ -32,5 +32,5 @@ export default function FaqHero({ searchTerm, onSearchChange }: FaqHeroProps) {
         />
       </Box>
     </Box>
-  );
+  )
 }

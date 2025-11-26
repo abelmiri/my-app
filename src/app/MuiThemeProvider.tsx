@@ -38,7 +38,10 @@ export default function MuiThemeProvider({ children }: Props) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <SnackbarProvider maxSnack={3} anchorOrigin={{ vertical: "top", horizontal: "left" }}>
+      <SnackbarProvider
+        maxSnack={3}
+        anchorOrigin={{ vertical: "top", horizontal: "left" }}
+      >
         <ToastRegistry />
         {children}
       </SnackbarProvider>

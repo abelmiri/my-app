@@ -8,7 +8,7 @@ export function getErrorMessage({
   if (data && typeof data === "string") return data
   if (data?.message) return data.message
   if (data?.error) return data.error
-  
+
   if (status === 404) return "Resource not found"
   if (status === 500) return "Internal server error"
   if (status === 403) return "Access denied"
@@ -20,4 +20,3 @@ export function getErrorMessage({
 export const toastConstant = {
   networkError: "Network error. Please check your connection.",
 }
-
